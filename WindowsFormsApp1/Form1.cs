@@ -23,7 +23,16 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            try
+            {
+                connection.Open();
+                checkConnection.Text = "Connection Successful";
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -33,24 +42,60 @@ namespace WindowsFormsApp1
 
         private void clickk(object sender, EventArgs e)
         {
-            try
+            connection.Open();
+            OleDbCommand command = new OleDbCommand();
+            command.Connection = connection;
+            command.CommandText = "select * from Adherents where Nom='" + txt_user.Text + "' and Prenom='" + txt_password.Text + "' ";
+            OleDbDataReader reader = command.ExecuteReader();
+
+            int count = 0;
+
+            while (reader.Read())
             {
-                connection.Open();
-                checkConnection.Text = "Connection Successful";
-                connection.Close();
+                count++;
             }
-            catch (Exception ex)
+            if (count == 1)
             {
-                MessageBox.Show("Error "+ ex);
+                MessageBox.Show("correct");
+                Inscription Inscri = new Inscription();
+                Inscri.Show();
+                this.Hide();
+
             }
+            if (count > 1)
+            {
+                MessageBox.Show("erreur de doublon");
+            }
+            else
+            {
+                MessageBox.Show("Erreur mdp");
+            }
+            connection.Close();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            Inscription Inscri = new Inscription();
+            Inscri.Show();
+            this.Hide();
+        }
+
+        private void Txt_user_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txt_password_TextChanged(object sender, EventArgs e)
         {
 
         }
