@@ -83,6 +83,7 @@
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(100, 20);
             this.txt_password.TabIndex = 4;
+            this.txt_password.UseSystemPasswordChar = true;
             this.txt_password.TextChanged += new System.EventHandler(this.Txt_password_TextChanged);
             // 
             // checkConnection

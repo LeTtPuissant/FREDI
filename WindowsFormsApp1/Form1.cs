@@ -23,8 +23,8 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            try
-            {
+           try
+           {
                 connection.Open();
                 checkConnection.Text = "Connection Successful";
                 connection.Close();
@@ -56,19 +56,19 @@ namespace WindowsFormsApp1
             }
             if (count == 1)
             {
-                MessageBox.Show("correct");
-                Inscription Inscri = new Inscription();
-                Inscri.Show();
-                this.Hide();
+                
+                MainForm Main = new MainForm();
+                Main.Show();
+                Hide();
 
             }
-            if (count > 1)
+            else if (count > 1)
             {
                 MessageBox.Show("erreur de doublon");
             }
             else
             {
-                MessageBox.Show("Erreur mdp");
+                MessageBox.Show("Identifiant ou Mot de passe invalide réessayer");
             }
             connection.Close();
         }
