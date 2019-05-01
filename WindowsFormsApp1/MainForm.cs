@@ -29,10 +29,23 @@ namespace WindowsFormsApp1
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            DialogResult dialog = MessageBox.Show("Voulez vous quitter?",
+            "Exit", MessageBoxButtons.YesNo);
 
+            if (dialog == DialogResult.Yes)
+            {
+                Form1 form1 = new Form1();
+                form1.Show();
+                Hide();
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
