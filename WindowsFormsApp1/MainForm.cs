@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
+
 
 namespace WindowsFormsApp1
 {
     public partial class MainForm : Form
     {
+        private OleDbConnection connection = new OleDbConnection();
+
         public MainForm()
         {
             InitializeComponent();
+            connection.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\kijiramer\Desktop\M2L-Projet-FDERI\frais.mdb";
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -47,7 +52,36 @@ namespace WindowsFormsApp1
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+                
+        }
 
+        private void Button2_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                connection.Open();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = connection;
+                string query = "SELECT * FROM [Lignes-frais]";
+                command.CommandText = query;
+
+                OleDbDataAdapter da = new OleDbDataAdapter(command);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur " + ex);
+            }
         }
     }
 }
