@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
         private void Button1_Click(object sender, EventArgs e)
         {
             DialogResult dialog = MessageBox.Show("Voulez vous quitter?",
-            "Exit", MessageBoxButtons.YesNo);
+            "Quitter", MessageBoxButtons.YesNo);
 
             if (dialog == DialogResult.Yes)
             {
