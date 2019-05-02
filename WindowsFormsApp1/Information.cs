@@ -41,8 +41,11 @@ namespace WindowsFormsApp1
             {
                 textBox1.Text = reader["nom"].ToString();
                 textBox2.Text = reader["prenom"].ToString();
+                textBox3.Text = reader["Date de naissance"].ToString();
+                textBox4.Text = reader["rue"].ToString();
                 textBox5.Text = reader["cp"].ToString();
-                textBox6.Text = reader["rue"].ToString();
+                textBox6.Text = reader["ville"].ToString();
+               
             }
             connection.Close();
         }

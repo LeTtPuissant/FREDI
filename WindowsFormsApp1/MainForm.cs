@@ -47,22 +47,6 @@ namespace WindowsFormsApp1
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-                
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void Button6_Click(object sender, EventArgs e)
-        {
             try
             {
                 connection.Open();
@@ -82,6 +66,22 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Erreur " + ex);
             }
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+                
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+           
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
