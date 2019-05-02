@@ -57,8 +57,8 @@ namespace WindowsFormsApp1
             if (count == 1)
             {
                 
-                MainForm Main = new MainForm();
-                Main.Show();
+                Information Info = new Information();
+                Info.Show();
                 Hide();
 
             }
@@ -71,6 +71,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Identifiant ou Mot de passe invalide réessayer");
             }
             connection.Close();
+
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -88,6 +89,8 @@ namespace WindowsFormsApp1
             Inscription Inscri = new Inscription();
             Inscri.Show();
             this.Hide();
+
+
         }
 
         private void Txt_user_TextChanged(object sender, EventArgs e)

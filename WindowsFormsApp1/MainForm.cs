@@ -83,5 +83,10 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Erreur " + ex);
             }
         }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

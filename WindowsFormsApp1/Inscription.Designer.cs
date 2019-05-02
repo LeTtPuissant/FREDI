@@ -252,6 +252,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Inscription";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inscription";
             this.Load += new System.EventHandler(this.Inscription_Load);
             this.groupBox1.ResumeLayout(false);
