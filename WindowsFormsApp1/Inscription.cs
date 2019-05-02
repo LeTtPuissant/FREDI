@@ -23,22 +23,7 @@ namespace WindowsFormsApp1
 
         private void Inscription_Load(object sender, EventArgs e)
         {
-            connection.Open();
-            OleDbCommand command = new OleDbCommand();
-            command.Connection = connection;
-            string query = "select * from Demandeurs";
-            command.CommandText = query;
-
-            OleDbDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                textBox1.Text = reader["nom"].ToString();
-                textBox2.Text = reader["prenom"].ToString();
-                textBox5.Text = reader["cp"].ToString();
-                textBox6.Text = reader["rue"].ToString();
-            }
-            connection.Close();
-
+           
         }
 
         private void Label2_Click(object sender, EventArgs e)
@@ -59,13 +44,13 @@ namespace WindowsFormsApp1
         private void Button2_Click(object sender, EventArgs e)
         {
            
-                /* connection.Open();
+               connection.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = connection;
-                command.CommandText = "INSERT INTO Adherents (Nom, Prenom) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "') ";
+                command.CommandText = "INSERT INTO Adherents (Nom, Prenom, N de licence) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "' , '" + textBox7.Text + "') ";
                 command.ExecuteNonQuery();
                 MessageBox.Show("Inscription pris en compte");
-                connection.Close(); */
+                connection.Close();
             
         }
 
