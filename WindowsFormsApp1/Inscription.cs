@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
                connection.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = connection;
-                command.CommandText = "INSERT INTO Adherents ([Nom], [Prenom], [numero-licence]) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "' , '" + int.Parse(textBox7.Text) + "') ";
+                command.CommandText = "INSERT INTO Adherents ([Nom], [Prenom], [numero-licence]) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "' , '" + long.Parse(textBox7.Text) + "') ";
                 command.ExecuteNonQuery();
                 MessageBox.Show("Inscription pris en compte");
                 connection.Close();
