@@ -47,11 +47,10 @@ namespace WindowsFormsApp1
                connection.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = connection;
-                command.CommandText = "INSERT INTO Adherents ([Nom], [Prenom], [numero-licence]) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "' , '" + long.Parse(textBox7.Text) + "') ";
+                command.CommandText = "INSERT INTO Demandeurs ([Nom], [Prenom], [Date de naissance], [rue], [cp], [ville], [adresse-mail]) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "' ,'"+(textBox3.Text)+"' , '" + textBox4.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "', 'kijiramer@hotmail.fr') ";
                 command.ExecuteNonQuery();
                 MessageBox.Show("Inscription pris en compte");
                 connection.Close();
-            
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)

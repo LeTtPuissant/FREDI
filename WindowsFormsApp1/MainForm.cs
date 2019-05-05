@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
+using Microsoft.Office.Core;
 
 
 namespace WindowsFormsApp1
@@ -56,7 +60,7 @@ namespace WindowsFormsApp1
                 command.CommandText = query;
 
                 OleDbDataAdapter da = new OleDbDataAdapter(command);
-                DataTable dt = new DataTable();
+                System.Data.DataTable dt = new System.Data.DataTable();
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
 
@@ -70,23 +74,40 @@ namespace WindowsFormsApp1
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-                
+
+
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void Button6_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            Workbook xlWorkBook;
+            Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+            excel.Application xlApp = new excel.Application();
+            xlApp.DisplayAlerts = false;
+            xlWorkBook = xlApp.Workbooks.Add(misValue);
+
+            xlApp.Sheets.Add(Type: "Classeur5.xlsx");
+
+            xlWorkSheet = (Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            xlWorkSheet.Cells[1, 1] = "Supinfo";
+        }
+            
     }
 }
+    
