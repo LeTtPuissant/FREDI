@@ -38,13 +38,15 @@ namespace WindowsFormsApp1
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Close();
+            Form1 form1 = new Form1();
+            form1.Show();
+            Hide();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
            
-               connection.Open();
+                connection.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = connection;
                 command.CommandText = "INSERT INTO Demandeurs ([Nom], [Prenom], [Date de naissance], [rue], [cp], [ville], [adresse-mail]) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "' ,'"+(textBox3.Text)+"' , '" + textBox4.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "', 'kijiramer@hotmail.fr') ";

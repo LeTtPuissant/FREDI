@@ -102,10 +102,18 @@ namespace WindowsFormsApp1
             xlApp.DisplayAlerts = false;
             xlWorkBook = xlApp.Workbooks.Add(misValue);
 
-            xlApp.Sheets.Add(Type: "Classeur5.xlsx");
+            xlApp.Sheets.Add(Type: @"C:\Users\kijiramer\Desktop\M2L-Projet-FDERI\Bordereau de note de frais-1");
 
             xlWorkSheet = (Worksheet)xlWorkBook.Worksheets.get_Item(1);
-            xlWorkSheet.Cells[1, 1] = "Supinfo";
+            xlWorkSheet.Cells[3, 7] = "Supinfo";
+            xlWorkSheet.Cells[3, 6] = "test gros";
+
+            xlWorkBook.SaveAs("supinfo.xlsx", excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, false, false, excel.XlSaveAsAccessMode.xlNoChange, excel.XlSaveConflictResolution.xlUserResolution, true, misValue, misValue, misValue);
+            xlWorkBook.Close(0);
+            xlApp.Quit();
+
+
+            MessageBox.Show("Ecriture check");
         }
             
     }
