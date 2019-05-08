@@ -74,7 +74,7 @@ namespace WindowsFormsApp1
 
 
             textBox3.Text = "Salle d'Armes de Villers lès Nancy, 1 rue Rodin - 54600 Villers lès Nancy";
-            textBox4.Text = textBox5.Text;
+            
 
             // Autocomplésion pour le formulaire note de frais...
 
@@ -160,26 +160,26 @@ namespace WindowsFormsApp1
             xlWorkSheet.get_Range("I17", "I17").HorizontalAlignment = excel.XlHAlign.xlHAlignCenter;
             xlWorkSheet.get_Range("I17", "I17").VerticalAlignment = excel.XlHAlign.xlHAlignCenter;
             xlWorkSheet.get_Range("I17", "I17").Font.Size = 10;
-            xlWorkSheet.get_Range("I17", "I17").Value = textBox4.Text;
+            xlWorkSheet.get_Range("I17", "I17").Value = textBox4.Text + "€";
 
             // Reprentant légal de 
             xlWorkSheet.get_Range("A20", "H21").HorizontalAlignment = excel.XlHAlign.xlHAlignCenter;
             xlWorkSheet.get_Range("A20", "H21").VerticalAlignment = excel.XlHAlign.xlHAlignCenter;
             xlWorkSheet.get_Range("A20", "H21").Font.Size = 10;
-            xlWorkSheet.get_Range("A20", "H21").Value = textBox4.Text;
+            xlWorkSheet.get_Range("A20", "H21").Value = richTextBox1.Text;
 
 
             
 
 
-            xlWorkBook.SaveAs("supinfo.xlsx", XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, false, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlUserResolution, true, misValue, misValue, misValue);
+            xlWorkBook.SaveAs("Bordereau de note de frais.xlsx", XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, false, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlUserResolution, true, misValue, misValue, misValue);
             xlWorkBook.Close(0);
             xlApp.Quit();
 
             
 
 
-            MessageBox.Show("Ecriture check");
+            MessageBox.Show("Votre feuille de note de frais est enregistré sur votre Bureau");
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
