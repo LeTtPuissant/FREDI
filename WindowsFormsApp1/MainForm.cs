@@ -53,6 +53,7 @@ namespace WindowsFormsApp1
         {
             try
             {
+                
                 connection.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = connection;
@@ -64,12 +65,41 @@ namespace WindowsFormsApp1
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
 
-                connection.Close();
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur " + ex);
             }
+
+
+            textBox3.Text = "Salle d'Armes de Villers lès Nancy, 1 rue Rodin - 54600 Villers lès Nancy";
+            textBox4.Text = textBox5.Text;
+
+            // Autocomplésion pour le formulaire note de frais...
+
+            /* OleDbCommand command1 = new OleDbCommand();
+            command1.Connection = connection;
+            string query1 = "select nom, prenom from Demandeurs";
+            command1.CommandText = query1;
+
+            
+
+            OleDbDataReader reader = command1.ExecuteReader();
+            while (reader.Read())
+            {
+                string[] souss = { reader.["nom"], reader.["prenom"] };
+                textBox1.Text = souss;
+                textBox2.Text = reader["prenom"].ToString();
+                textBox3.Text = reader["Date de naissance"].ToString();
+                textBox4.Text = reader["rue"].ToString();
+                textBox5.Text = reader["cp"].ToString();
+                textBox6.Text = reader["ville"].ToString();
+
+            } */
+
+
+            connection.Close();
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -105,17 +135,62 @@ namespace WindowsFormsApp1
             xlApp.Sheets.Add(Type: @"C:\Users\kijiramer\Desktop\M2L-Projet-FDERI\Bordereau de note de frais-1");
 
             xlWorkSheet = (Worksheet)xlWorkBook.Worksheets.get_Item(1);
-            xlWorkSheet.Cells[3, 7] = "Supinfo";
-            xlWorkSheet.Cells[3, 6] = "test gros";
 
-            xlWorkBook.SaveAs("supinfo.xlsx", excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, false, false, excel.XlSaveAsAccessMode.xlNoChange, excel.XlSaveConflictResolution.xlUserResolution, true, misValue, misValue, misValue);
+            // Soussigné
+            xlWorkSheet.get_Range("A5", "H5").HorizontalAlignment = excel.XlHAlign.xlHAlignCenter;
+            xlWorkSheet.get_Range("A5", "H5").VerticalAlignment = excel.XlHAlign.xlHAlignCenter;
+            xlWorkSheet.get_Range("A5", "H5").Font.Size = 10;
+            xlWorkSheet.get_Range("A5", "H5").Value = textBox1.Text;
+
+            // Deumerant
+            xlWorkSheet.get_Range("A7", "H7").HorizontalAlignment = excel.XlHAlign.xlHAlignCenter;
+            xlWorkSheet.get_Range("A7", "H7").VerticalAlignment = excel.XlHAlign.xlHAlignCenter;
+            xlWorkSheet.get_Range("A7", "H7").Font.Size = 10;
+            xlWorkSheet.get_Range("A7", "H7").Value = textBox2.Text;
+
+            // Année civile
+            xlWorkSheet.get_Range("A7", "H7").HorizontalAlignment = excel.XlHAlign.xlHAlignCenter;
+            xlWorkSheet.get_Range("A7", "H7").VerticalAlignment = excel.XlHAlign.xlHAlignCenter;
+            xlWorkSheet.get_Range("A7", "H7").Font.Size = 16;
+            xlWorkSheet.get_Range("F2", "H2").Value = "Année civile " + textBox8.Text;
+
+            
+
+            //  Total
+            xlWorkSheet.get_Range("I17", "I17").HorizontalAlignment = excel.XlHAlign.xlHAlignCenter;
+            xlWorkSheet.get_Range("I17", "I17").VerticalAlignment = excel.XlHAlign.xlHAlignCenter;
+            xlWorkSheet.get_Range("I17", "I17").Font.Size = 10;
+            xlWorkSheet.get_Range("I17", "I17").Value = textBox4.Text;
+
+            // Reprentant légal de 
+            xlWorkSheet.get_Range("A20", "H21").HorizontalAlignment = excel.XlHAlign.xlHAlignCenter;
+            xlWorkSheet.get_Range("A20", "H21").VerticalAlignment = excel.XlHAlign.xlHAlignCenter;
+            xlWorkSheet.get_Range("A20", "H21").Font.Size = 10;
+            xlWorkSheet.get_Range("A20", "H21").Value = textBox4.Text;
+
+
+            
+
+
+            xlWorkBook.SaveAs("supinfo.xlsx", XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, false, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlUserResolution, true, misValue, misValue, misValue);
             xlWorkBook.Close(0);
             xlApp.Quit();
+
+            
 
 
             MessageBox.Show("Ecriture check");
         }
-            
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RichTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     

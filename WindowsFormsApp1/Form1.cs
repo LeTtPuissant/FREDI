@@ -26,7 +26,6 @@ namespace WindowsFormsApp1
            try
            {
                 connection.Open();
-                checkConnection.Text = "Connection Successful";
                 connection.Close();
             }
             catch (Exception ex)
