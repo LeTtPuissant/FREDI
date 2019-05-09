@@ -110,7 +110,8 @@ namespace WindowsFormsApp1
 
         private void Button2_Click(object sender, EventArgs e)
         {
-
+            Ajout ajout = new Ajout();
+            ajout.Show();
         }
 
         private void Button6_Click(object sender, EventArgs e)

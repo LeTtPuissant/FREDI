@@ -53,6 +53,7 @@ namespace WindowsFormsApp1
                 command.ExecuteNonQuery();
                 MessageBox.Show("Inscription prise en compte");
                 connection.Close();
+
             MainForm mainForm = new MainForm();
             mainForm.Show();
             Hide();
