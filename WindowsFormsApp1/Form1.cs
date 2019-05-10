@@ -23,15 +23,8 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           try
-           {
-                connection.Open();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error " + ex);
-            }
+            txt_user.Text = "admin";
+            txt_password.Text = "root";
         }
 
         private void Label1_Click(object sender, EventArgs e)

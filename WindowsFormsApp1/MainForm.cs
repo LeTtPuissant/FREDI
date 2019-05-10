@@ -57,7 +57,7 @@ namespace WindowsFormsApp1
                 connection.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = connection;
-                string query = "SELECT * FROM [Lignes-frais]";
+                string query = "SELECT * FROM [frais]";
                 command.CommandText = query;
 
                 OleDbDataAdapter da = new OleDbDataAdapter(command);

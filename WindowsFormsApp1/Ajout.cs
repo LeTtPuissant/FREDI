@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Windows.Forms;
 
 
 namespace WindowsFormsApp1
@@ -49,25 +42,40 @@ namespace WindowsFormsApp1
 
         private void Button1_Click(object sender, EventArgs e)
         {
+
+
+
+            /*float km, peage, repas, hebergement;
+
+            km = float.Parse(textBox4.Text);
+            peage = float.Parse(textBox5.Text);
+            repas = float.Parse(textBox6.Text);
+            hebergement = float.Parse(textBox7.Text);
+            */
             try
             {
                 connection.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = connection;
-                command.CommandText = "INSERT INTO Lignes-frais ([date], [motif], [trajet], [km], [cout-peage], [cout-repas], [cout-hebergement]) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "' ,'" + textBox3.Text + "' , '" + textBox4.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "', '" + textBox7.Text + "') ";
+                command.CommandText = "INSERT INTO frais ([date],[motif],[trajet],[km],[cout-peage],[cout-repas],[cout-hebergement],[adresse-mail]) VALUES ('"+textBox1.Text+"','"+comboBox1.Text+"','"+textBox3.Text+ "','" +textBox4.Text+ "','" +textBox5.Text+ "','" +textBox6.Text+ "','"+textBox7.Text+"','radga@hotmail.fr')";
+
+
                 command.ExecuteNonQuery();
-                MessageBox.Show("Aout de frais prise en compte");
+                MessageBox.Show("Ajout de frais pris en compte");
                 connection.Close();
-            }
-            catch(Exception ex)
+            }catch(Exception ex)
             {
-                MessageBox.Show("erreur " + ex);
+                MessageBox.Show("Erreur " + ex);
             }
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
             Hide();
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }
