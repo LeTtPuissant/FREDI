@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
     {
         private OleDbConnection connection = new OleDbConnection();
 
+  
         public MainForm()
         {
             InitializeComponent();
@@ -72,6 +73,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Erreur " + ex);
             }
 
+            
 
             textBox3.Text = "Salle d'Armes de Villers lès Nancy, 1 rue Rodin - 54600 Villers lès Nancy";
             
@@ -191,6 +193,11 @@ namespace WindowsFormsApp1
         private void RichTextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -168,10 +168,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(136, 27);
+            this.label10.Location = new System.Drawing.Point(103, 21);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 13);
+            this.label10.Size = new System.Drawing.Size(165, 26);
             this.label10.TabIndex = 17;
             this.label10.Text = "Ajout des frais";
             this.label10.Click += new System.EventHandler(this.Label10_Click);

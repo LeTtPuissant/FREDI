@@ -17,10 +17,12 @@ namespace WindowsFormsApp1
     public partial class Information : Form
     {
         private OleDbConnection connection = new OleDbConnection();
-        public Information()
+        public Information(string UserName, string password)
         {
             InitializeComponent();
             connection.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\kijiramer\Desktop\M2L-Projet-FDERI\frais.mdb";
+            string Login = UserName;
+            string Loginpass = password;
         }
 
         private void Button1_Click(object sender, EventArgs e)

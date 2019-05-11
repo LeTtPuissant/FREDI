@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
             if (count == 1)
             {
                 
-                Information Info = new Information();
+                Information Info = new Information(txt_user.Text,txt_password.Text);
                 Info.Show();
                 Hide();
 
@@ -64,6 +64,7 @@ namespace WindowsFormsApp1
             }
             connection.Close();
 
+            
         }
 
         private void Button2_Click(object sender, EventArgs e)

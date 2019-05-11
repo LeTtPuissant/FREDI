@@ -165,13 +165,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txt_user;
-        private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.Label checkConnection;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.TextBox txt_user;
+        public System.Windows.Forms.TextBox txt_password;
     }
 }
 
