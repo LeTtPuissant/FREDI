@@ -23,6 +23,7 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            MessageBox.Show("Avis au jury du BTS : Le Logiciel de gestion de frais n'est pas encore à jours au niveau de la base de donnée la mise à jours arrive très prochainement \nCependant une instance de test est disponible avec l'identifiant admin \n ");
             txt_user.Text = "admin";
             txt_password.Text = "root";
         }

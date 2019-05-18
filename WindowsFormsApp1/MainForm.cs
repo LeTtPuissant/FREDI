@@ -135,7 +135,7 @@ namespace WindowsFormsApp1
             xlApp.DisplayAlerts = false;
             xlWorkBook = xlApp.Workbooks.Add(misValue);
 
-            xlApp.Sheets.Add(Type: @"C:\Users\kijiramer\Desktop\M2L-Projet-FDERI\Bordereau de note de frais-1");
+            xlApp.Sheets.Add(Type: @"C:\Users\kijiramer\source\repos\WindowsFormsApp1\WindowsFormsApp1\Bordereau de note de frais-1");
 
             xlWorkSheet = (Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
@@ -176,13 +176,10 @@ namespace WindowsFormsApp1
 
 
             xlWorkBook.SaveAs("Bordereau de note de frais.xlsx", XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, false, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlUserResolution, true, misValue, misValue, misValue);
+            MessageBox.Show("Votre note de frais à été enregistré au même endroit où est enregistré votre logiciel");
             xlWorkBook.Close(0);
             xlApp.Quit();
 
-            
-
-
-            MessageBox.Show("Votre feuille de note de frais est enregistré sur votre Bureau");
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
