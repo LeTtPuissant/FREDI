@@ -11,8 +11,7 @@ namespace WindowsFormsApp1
         public Ajout()
         {
             InitializeComponent();
-            connection.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\kijiramer\Desktop\M2L-Projet-FDERI\frais.mdb";
-
+            connection.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\frais.mdb";
         }
 
         private void Label1_Click(object sender, EventArgs e)

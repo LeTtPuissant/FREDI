@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
         public MainForm()
         {
             InitializeComponent();
-            connection.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\kijiramer\Desktop\M2L-Projet-FDERI\frais.mdb";
+            connection.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\frais.mdb";
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -135,7 +135,7 @@ namespace WindowsFormsApp1
             xlApp.DisplayAlerts = false;
             xlWorkBook = xlApp.Workbooks.Add(misValue);
 
-            xlApp.Sheets.Add(Type: @"C:\Users\kijiramer\source\repos\WindowsFormsApp1\WindowsFormsApp1\Bordereau de note de frais-1");
+            xlApp.Sheets.Add(Type: @"Source=|DataDirectory|\Bordereau de note de frais-1.xls");
 
             xlWorkSheet = (Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
@@ -172,10 +172,11 @@ namespace WindowsFormsApp1
             xlWorkSheet.get_Range("A20", "H21").Value = richTextBox1.Text;
 
 
-            
 
+            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            filePath += @"\Bordereau de note de frais\";
 
-            xlWorkBook.SaveAs("Bordereau de note de frais.xlsx", XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, false, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlUserResolution, true, misValue, misValue, misValue);
+            xlWorkBook.SaveAs(filePath, XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, false, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlUserResolution, true, misValue, misValue, misValue);
             MessageBox.Show("Votre note de frais à été enregistré au même endroit où est enregistré votre logiciel");
             xlWorkBook.Close(0);
             xlApp.Quit();
