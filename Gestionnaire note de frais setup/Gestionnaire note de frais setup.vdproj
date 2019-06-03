@@ -836,7 +836,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2200DC95464E46A8AA33F6E806C8AF37"
             {
-            "SourcePath" = "8:..\\WindowsFormsApp1\\obj\\Release\\WindowsFormsApp1.exe"
+            "SourcePath" = "8:..\\WindowsFormsApp1\\obj\\Debug\\WindowsFormsApp1.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_AD8BC1011A814AFE82FB84BF1EC66FF0"
@@ -864,7 +864,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_ADE2B23CF39649438D1F711416FE0AB1"
             {
-            "SourcePath" = "8:..\\WindowsFormsApp1\\obj\\Release\\WindowsFormsApp1.exe"
+            "SourcePath" = "8:..\\WindowsFormsApp1\\obj\\Debug\\WindowsFormsApp1.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_B676818944E94B138375CE2C45489EBD"
