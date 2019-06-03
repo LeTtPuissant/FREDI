@@ -51,6 +51,7 @@ namespace WindowsFormsApp1
             repas = float.Parse(textBox6.Text);
             hebergement = float.Parse(textBox7.Text);
             */
+
             try
             {
                 connection.Open();

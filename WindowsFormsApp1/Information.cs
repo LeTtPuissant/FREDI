@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
                 textBox4.Text = reader["rue"].ToString();
                 textBox5.Text = reader["cp"].ToString();
                 textBox6.Text = reader["ville"].ToString();
-               
+
             }
             connection.Close();
         }

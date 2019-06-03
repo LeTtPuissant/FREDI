@@ -12,7 +12,7 @@ using excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
 using Microsoft.Office.Core;
-
+using System.IO;
 
 namespace WindowsFormsApp1
 {
@@ -175,6 +175,18 @@ namespace WindowsFormsApp1
 
             string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             filePath += @"\Bordereau de note de frais\";
+
+
+
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel Worksheets|*.xlxs";
+
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                filePath += File.Open(saveFileDialog1.FileName, FileMode.CreateNew);
+            }
+
 
             xlWorkBook.SaveAs(filePath, XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, false, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlUserResolution, true, misValue, misValue, misValue);
             MessageBox.Show("Votre note de frais à été enregistré au même endroit où est enregistré votre logiciel");
